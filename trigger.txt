@@ -133,7 +133,7 @@ before update or delete or insert on lib
 for each row 
 begin
 if rtrim(upper(to_char(sysdate,'day','nls_date_language=english')))='FRIDAY' then 
-raise_application_error(-20001,'operation not allowed on sunday');
+raise_application_error(-20001,'operation not allowed on friday');
 end if;
 end;
 /
@@ -159,6 +159,7 @@ ERROR at line 1:
 ORA-20001: operation not allowed on friday
 ORA-06512: at "SYSTEM.STATEMENT", line 3
 ORA-04088: error during execution of trigger 'SYSTEM.STATEMENT'
+
 
 
 
